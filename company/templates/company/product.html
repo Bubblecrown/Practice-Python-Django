@@ -1,0 +1,13 @@
+{% extends 'company/base.html' %} 
+{% block title %}
+  Product
+{% endblock title %}
+
+{% block content %} 
+<h3>Our products</h3>
+{% for item in data %}
+<p><b>Product : </b>{{item.name}}</p>
+<p><b>Price : </b>{{item.price}}</p>
+<p>---------------------------</p>
+{% endfor %} 
+{% endblock content %}
