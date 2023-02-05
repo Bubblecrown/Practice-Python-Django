@@ -1,0 +1,12 @@
+{% extends 'company/base.html' %} 
+{% block title %} Home 
+{% endblock title %} 
+{%  block content %}
+<div class="container">
+  <h1>{{data.title}}</h1>
+  <p>Created: {{data.date_created | date}}, Updated: {{data.date_updated | date}}</p>
+  <img src="{{data.cover_image.url}}" alt="{{data.title}}" class="img-fluid" />
+  <p>{{data.body | safe}}</p>
+</div>
+
+{% endblock content %}

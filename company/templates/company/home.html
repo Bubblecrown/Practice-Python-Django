@@ -9,9 +9,10 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
+        <img src={{ post.cover_image.url }} alt="{{post.title}}" class="img-fluid"/>
         <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">{{ post.description }}</p>
-        <a href="#" class="btn btn-warning">Learn More</a>
+        <a href="blog/{{post.id}}" class="btn btn-warning">Learn More</a>
       </div>
     </div>
   </div>
