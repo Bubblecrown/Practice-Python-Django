@@ -14,40 +14,36 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+
     <title>{% block title %}{% endblock title %}</title>
     
   </head>
   <body>
-
     {% comment %} Start Navbar {% endcomment %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">Bootcamp</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/product">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/about">About</a>
-            </li>
-          </ul>
-        </div>
+      <a class="navbar-brand" href="#">Bootcamp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/product">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/contact">Contact us</a>
+          </li>
+        </ul>
+        <form class="d-flex" action="/search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
+    </div>
     </nav>
     {% comment %} End Navbar {% endcomment %}
 
@@ -55,5 +51,6 @@
       {% block content %}  {% endblock content %}
       </div>
     </div>
+    
   </body>
 </html>

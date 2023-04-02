@@ -1,6 +1,7 @@
 from django.db import models
 
-# Create your models here.
+# Create the table
+
 class Post(models.Model):
   # field_name = models.fieldType()
   title = models.CharField(max_length=80)
@@ -21,9 +22,21 @@ class ProductDeme(models.Model):
 
   def __str__(self):
     return self.name
+  
+class Contact(models.Model):
+  subject = models.CharField(max_length=150)
+  email = models.EmailField(null=True)
+  sender = models.CharField(max_length=80)
+  detail = models.TextField()
+  date_sent = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return self.subject
+
 # 1. models
-# makemigrations -- update database
-# migrate -- submit table
+# python manage.py makemigrations -- update database
+# python manage.py migrate -- submit table
+# ***** update set null *****
 
 # Set title name
 
@@ -31,3 +44,4 @@ class ProductDeme(models.Model):
 # register: display to admin page
 
 # 3. Views
+

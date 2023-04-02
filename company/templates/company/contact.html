@@ -1,0 +1,14 @@
+{% extends 'company/base.html' %} {% block title %} About us {% endblock title%}
+{% block content %} {% comment %} action -- URL {% endcomment %} {% comment %}
+method -- GET, POST {% endcomment %}
+<h1>Contact us</h1>
+<p>Any question or remarks? Just write us a message!</p>
+
+<div class="col-md-4 mb-5">
+  <form action="/contact" method="POST">
+    {% csrf_token %} {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>
+
+{% endblock content %}
