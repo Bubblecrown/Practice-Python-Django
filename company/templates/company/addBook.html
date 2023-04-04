@@ -1,0 +1,41 @@
+{% extends 'company/base.html' %} {% block content %} {% comment %} action --
+URL {% endcomment %} {% comment %} method -- GET, POST {% endcomment %}
+<h1>Create new book</h1>
+<p>Create your new book!</p>
+
+<div class="col-md-4 mb-5">
+  <form action="/addBook" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="book_title" class="form-label">Book name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="book_title"
+        name="book_title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="book_description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="book_description"
+        name="book_description"
+        rows="5"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="book_price" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="book_price"
+        name="book_price"
+      />
+    </div>
+
+    <input type="submit" value="submit" class="btn btn-primary" />
+  </form>
+</div>
+
+{% endblock content %}

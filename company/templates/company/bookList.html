@@ -1,0 +1,25 @@
+{% extends 'company/base.html' %} {% block content %}
+<h3>Our Books</h3>
+
+<div class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}

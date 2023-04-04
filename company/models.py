@@ -33,6 +33,18 @@ class Contact(models.Model):
   def __str__(self):
     return self.subject
 
+class Book(models.Model):
+  title = models.CharField(max_length=100)
+  description = models.TextField(null=True, blank=True)
+  price = models.FloatField(default=100)
+
+  def __str__(self):
+    return '{} ({})'.format(self.title, self.price)
+  
+# null=True --> null in DB
+# blank=True --> null in user field
+
+
 # 1. models
 # python manage.py makemigrations -- update database
 # python manage.py migrate -- submit table

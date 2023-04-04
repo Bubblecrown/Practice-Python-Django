@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 from .form import ContactForm
 from django.db.models import Q
-from .models import Post, ProductDeme
+from .models import Book, Post, ProductDeme
 
 def Homepage(request):
   view = 'company/Home.html'
@@ -51,6 +51,32 @@ def Search(request):
   context = {'post' : post}
 
   return render(request, view, context)
+
+def AddBook(request):
+  view = 'company/addBook.html'
+  if request.method == 'POST':
+    data = request.POST.copy()
+
+    # name in input of html
+    book_title = data.get('book_title')
+    book_description = data.get('book_description')
+    book_price = data.get('book_price')
+
+    newbook = Book()
+    newbook.title = book_title
+    newbook.description = book_description
+    newbook.price = float(book_price)
+    newbook.save()
+
+  # context = {'data': data}
+  return render(request, view)
+
+def BookList(request):
+  view = 'company/bookList.html'
+  data = Book.objects.all()
+  context = {'data': data}
+  return render(request, view, context)
+
 
 # .\venv\Scripts\activate
 # cd firstweb
